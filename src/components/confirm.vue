@@ -1,6 +1,6 @@
 <template>
   <div id="confirm">
-    <h1>{{ devi }}</h1>
+    <h1>父组件传的值{{ devi }}</h1>
     <el-button @click="newAge">newAge</el-button>
   </div>
 </template>

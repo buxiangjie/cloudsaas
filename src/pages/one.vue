@@ -1,6 +1,7 @@
 <template>
   <div id="one">
-    <confirm :devi="age"></confirm>
+    <h1>{{age}}</h1>
+    <confirm :devi="age" @newRealAge="heddleAge"></confirm>
     <el-button @click="show = !show">点击</el-button>
     <div style="display: flex; margin-top: 20px; height: 100px;">
       <transition name="el-fade-in-linear">
