@@ -9,7 +9,12 @@
 export default {
   name: "confirm",
   props: {
-    devi: Number
+    devi: Number,
+  },
+  data(){
+    return{
+      'dd': 'aa'
+    }
   },
   computed: {
     realAge() {
