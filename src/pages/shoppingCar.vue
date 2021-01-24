@@ -24,15 +24,22 @@
     <span v-show="tableData.length>0">总价为:{{ countPrice | getFinalPrice }}</span>
     <Confirm ref="good"></Confirm>
     <el-button @click="child">iii</el-button>
+    <slo v-slot="slo">
+      <span v-for="it in slo.item">{{it}}---</span>
+    </slo>
   </div>
 </template>
 
 <script>
 import Confirm from "../components/confirm";
+import slo from "../components/slo";
 
 export default {
   name: "shoppingCar",
-  components: {Confirm},
+  components: {
+    Confirm,
+    slo
+  },
   data() {
     return {
       'tableData': [
