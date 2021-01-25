@@ -1,66 +1,53 @@
 <template>
-  <el-container style="height: 500px">
-    <el-aside width="200px">
-      <el-menu unique-opened>
-        <el-submenu index="1">
-          <template slot="title">测试</template>
-          <el-menu-item-group>
-            <el-menu-item index="1-1">
-              <router-link to="/index/one">测试用例</router-link>
-            </el-menu-item>
-            <el-menu-item>
-              <router-link to="/index/login">测试计划</router-link>
-            </el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-        <el-submenu index="2">
-          <template slot="title">工具</template>
-          <el-menu-item-group>
-            <el-menu-item index="2-1">
-              <el-link href="http://192.168.8.66:8085">测试计划</el-link>
-            </el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-      </el-menu>
-    </el-aside>
-
+  <div>
     <el-container>
-      <el-header style="text-align: right">
-        <i class="el-icon-loading"></i>
-        <span>header</span>
-      </el-header>
+      <!--      <el-aside width="250px">-->
+      <Navber></Navber>
+      <!--      </el-aside>-->
 
-      <el-main>
-        <keep-alive>
-          <router-view></router-view>
-        </keep-alive>
-      </el-main>
+      <el-container style="height: 1500px">
+        <el-header style="text-align: right">
+          <i class="el-icon-loading"></i>
+          <span>header</span>
+        </el-header>
+
+        <el-main>
+          <el-scrollbar>
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
+          </el-scrollbar>
+        </el-main>
+      </el-container>
     </el-container>
-  </el-container>
+  </div>
 </template>
 <script>
+import Navber from '../components/navBar'
 
 export default {
   name: "index",
+  components: {
+    Navber
+  },
   data() {
     return {
-      dd: [
-        {
-          id: 1,
-          name: 'su',
-          addre: 'bj'
-        },
-        {
-          id: 2,
-          name: 'cu',
-          addre: 'bz'
-        }
-      ],
+      elUnderLine: false,
     }
   },
 }
 </script>
 
 <style scoped>
+.el-main {
+  background-color: #E9EEF3;
+  height: 0;
+  flex-grow: 1;
+}
 
+.el-header {
+  background-color: #B3C0D1;
+  color: #333;
+  line-height: 60px;
+}
 </style>

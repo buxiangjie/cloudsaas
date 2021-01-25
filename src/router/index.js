@@ -7,6 +7,7 @@ const one = () => import('@/pages/one')
 const login = () => import('@/pages/login')
 const shoppingCar = () => import('@/pages/shoppingCar')
 const index = () => import('@/pages/index')
+const Navbar = () => import('@/components/navbar')
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
           component: login
         }
       ]
+    },
+    {
+      path: '/bar',
+      name: 'bar',
+      component: Navbar
     }
   ]
 })
