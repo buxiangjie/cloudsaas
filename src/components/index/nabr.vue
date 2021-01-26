@@ -10,17 +10,17 @@
     </el-menu-item>
     <el-submenu index="1">
       <template slot="title">
-        <svg-icon iconClass="interFace"></svg-icon>
-        <span slot="title">系统接口</span>
+        <svg-icon iconClass="busiSystem"></svg-icon>
+        <span slot="title">业务系统</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="/index/one">
-          <i class="el-icon-location"></i>
-          <span slot="title">接口</span>
+        <el-menu-item index="/index/aidedTool">
+          <svg-icon iconClass="interfaceSetting"></svg-icon>
+          <span slot="title">辅助工具</span>
         </el-menu-item>
         <el-menu-item index="/index/login">
-          <i class="el-icon-location"></i>
-          <span slot="title">测试计划</span>
+          <svg-icon iconClass="interfaceManage"></svg-icon>
+          <span slot="title">接口管理</span>
         </el-menu-item>
       </el-menu-item-group>
     </el-submenu>

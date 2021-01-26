@@ -1,16 +1,16 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div class="eh">
     <el-header>
-      <el-row :gutter="1">
-        <el-col :span=1>
-          <div @click="toggleCollapse">
-            <i v-if="isColl" class="el-icon-arrow-left"></i>
-            <i v-else class="el-icon-arrow-right"></i>
+      <el-row>
+        <el-col class="gc">
+          <div class="grid-content bg-purple">
+            <i v-if="isColl" class="el-icon-arrow-left" @click="toggleCollapse"></i>
+            <i v-else class="el-icon-arrow-right" @click="toggleCollapse"></i>
           </div>
         </el-col>
-        <el-col :span=15>
-          <div style="background-color: #409EFF; height: 28px;">
-            <el-breadcrumb class="breadcrumb-container" separator-class="el-icon-arrow-right">
+        <el-col>
+          <div class="grid-content bg-purple">
+            <el-breadcrumb>
               <el-breadcrumb-item v-for="item in levelList" :key="item.path" :to="item.path">
                 <span>{{ item.meta.title }}</span>
               </el-breadcrumb-item>
@@ -65,20 +65,8 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 5px rgba(0, 0, 0, .01);
 }
 
-.el-row {
-  margin-bottom: 20px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.el-col {
+.gc {
   border-radius: 4px;
-}
-
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
+  min-height: 40px;
 }
 </style>

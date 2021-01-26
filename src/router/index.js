@@ -3,10 +3,11 @@ import Router from 'vue-router'
 import {on} from "element-ui/src/utils/dom";
 
 const test = () => import('@/pages/test')
-const one = () => import('@/pages/one')
+const aidedTool = () => import('@/pages/aidedTool')
 const login = () => import('@/pages/login')
 const shoppingCar = () => import('@/pages/shoppingCar')
 const index = () => import('@/pages/index')
+const delProd = () => import('@/pages/delProd')
 
 Vue.use(Router)
 
@@ -37,15 +38,22 @@ export default new Router({
       children: [
         {
           path: '',
-          redirect: 'one'
+          redirect: 'aidedTool'
         },
         {
-          path: 'one',
-          name: '一',
-          component: one,
+          path: 'aidedTool',
+          name: '辅助工具',
+          component: aidedTool,
           meta: {
-            title: '一'
-          }
+            title: '辅助工具'
+          },
+          children:[
+            {
+              path: 'delProd',
+              name: '删除进件信息',
+              component: delProd
+            }
+          ]
         },
         {
           path: 'login',
