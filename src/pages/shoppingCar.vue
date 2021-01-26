@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import Confirm from "../components/confirm";
-import slo from "../components/slo";
+import Confirm from "../components/index/confirm";
+import slo from "../components/index/slo";
 
 export default {
   name: "shoppingCar",

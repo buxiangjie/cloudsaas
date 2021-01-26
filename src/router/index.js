@@ -7,9 +7,9 @@ const one = () => import('@/pages/one')
 const login = () => import('@/pages/login')
 const shoppingCar = () => import('@/pages/shoppingCar')
 const index = () => import('@/pages/index')
-const Navbar = () => import('@/components/navbar')
 
 Vue.use(Router)
+
 
 export default new Router({
   mode: 'history',
@@ -31,6 +31,9 @@ export default new Router({
     {
       path: '/index',
       component: index,
+      meta: {
+        title: '首页'
+      },
       children: [
         {
           path: '',
@@ -38,20 +41,27 @@ export default new Router({
         },
         {
           path: 'one',
-          name: 'one',
-          component: one
+          name: '一',
+          component: one,
+          meta: {
+            title: '一'
+          }
         },
         {
           path: 'login',
-          name: 'login',
-          component: login
+          name: '登录',
+          component: login,
+          meta: {
+            title: '登录'
+          }
         }
       ]
-    },
-    {
-      path: '/bar',
-      name: 'bar',
-      component: Navbar
     }
   ]
 })
+
+
+const VueRouterPush = Router.prototype.push
+Router.prototype.push = function push(to) {
+  return VueRouterPush.call(this, to).catch(err => err)
+}

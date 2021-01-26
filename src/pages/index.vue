@@ -1,53 +1,39 @@
 <template>
-  <div>
-    <el-container>
-      <!--      <el-aside width="250px">-->
-      <Navber></Navber>
-      <!--      </el-aside>-->
-
-      <el-container style="height: 1500px">
-        <el-header style="text-align: right">
-          <i class="el-icon-loading"></i>
-          <span>header</span>
-        </el-header>
-
-        <el-main>
-          <el-scrollbar>
-            <keep-alive>
-              <router-view></router-view>
-            </keep-alive>
-          </el-scrollbar>
-        </el-main>
-      </el-container>
+  <el-container>
+    <el-aside width="auto">
+      <nabr :is-coll="isCollapse"></nabr>
+    </el-aside>
+    <el-container direction="vertical">
+      <ehead :is-coll="isCollapse" v-on:changeCollapse="linstenChange"></ehead>
+      <emain></emain>
     </el-container>
-  </div>
+  </el-container>
 </template>
 <script>
-import Navber from '../components/navBar'
+import nabr from '../components/index/nabr'
+import ehead from "../components/index/ehead";
+import emain from "../components/index/emain";
 
 export default {
   name: "index",
   components: {
-    Navber
+    nabr,
+    ehead,
+    emain
   },
   data() {
     return {
-      elUnderLine: false,
+      isCollapse: true
     }
   },
+  methods:{
+    linstenChange(coll){
+      this.isCollapse = coll;
+    }
+  }
 }
 </script>
 
 <style scoped>
-.el-main {
-  background-color: #E9EEF3;
-  height: 0;
-  flex-grow: 1;
-}
 
-.el-header {
-  background-color: #B3C0D1;
-  color: #333;
-  line-height: 60px;
-}
 </style>

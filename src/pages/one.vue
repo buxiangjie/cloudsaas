@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import confirm from "../components/confirm";
+import confirm from "../components/index/confirm";
 
 export default {
   name: 'one',
@@ -58,7 +58,6 @@ export default {
   computed: {
     fullName: {
       get() {
-        console.log("----ahahah---");
         return "abc"
       }
     }
